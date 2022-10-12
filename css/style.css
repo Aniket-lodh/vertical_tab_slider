@@ -1,0 +1,81 @@
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: black; }
+
+body,
+html,
+.container {
+  position: relative;
+  margin: auto;
+  background: #202124; }
+
+p {
+  color: white; }
+
+.container {
+  display: flex;
+  width: 500px;
+  margin: 20px auto; }
+  .container .tabs {
+    width: max-content;
+    display: flex;
+    flex-direction: column; }
+    .container .tabs .tab {
+      display: inline-block;
+      width: 100px;
+      height: 40px;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 1.5rem;
+      border-left: 2px solid #5f6368;
+      color: #5f6368;
+      font-weight: bold;
+      transition: color 0.25s ease; }
+      .container .tabs .tab:hover {
+        color: white; }
+      .container .tabs .tab.active {
+        color: white; }
+    .container .tabs .tabs-1.active ~ .highlighter {
+      transform: translateY(0px); }
+    .container .tabs .tabs-2.active ~ .highlighter {
+      transform: translateY(40px); }
+    .container .tabs .tabs-3.active ~ .highlighter {
+      transform: translateY(80px); }
+    .container .tabs .highlighter {
+      display: block;
+      background: white;
+      width: 2px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(0);
+      transition: transform 0.2s ease;
+      transition-delay: 0.1s;
+      z-index: 10; }
+  .container .content {
+    position: relative;
+    display: block;
+    padding: 8px; }
+    .container .content_section {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      opacity: 0;
+      height: auto;
+      transition: opacity 0s ease; }
+      .container .content_section.visible {
+        position: relative;
+        opacity: 1;
+        display: block;
+        transition: opacity .3s ease;
+        z-index: 2; }
+      .container .content_sectionp {
+        line-height: 1.5rem;
+        font-size: 16px; }
